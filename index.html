@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Google Dorks</title>
+	<!-- Bootstrap CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<!-- Google CSS -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+	<!-- CSS -->
+	<link href="css/index.css" rel="stylesheet">
+</head>
+
+<body>
+	<div class="container-fluid logo-cont mt-5">
+		<img id="logo" src="img/DORKS.png">
+	</div>
+
+	<form action="https://www.google.com/search" method="get" target="_blank">
+		<div class="container search-cont mt-5">
+			<div class="search-symb-div col-1">
+				<span class="material-symbols-outlined" id="search-icon">search</span>
+			</div>
+			<div class="search-inpt-div col">
+				<input id="search-inpt" type="search" maxlength="2048" name="q">
+			</div>
+		</div>
+		<div class="container search-btn-cont mt-4 mb-4">
+			<div class="search-btn-div col">
+				<input id="search-btn" type="submit" value="Поиск в Google">
+			</div>
+		</div>
+	</form>	
+
+	<div class="container">
+		<form>
+			<table>
+				<tr>
+					<th>Оператор</th>
+					<th>Описание</th>
+					<th>Запрос</th>
+				</tr>
+				<tr>
+					<td class="statement">intitle</td>
+					<td class="description">Ищет страницы, заголовок которых содержит указанные слова. Например, intitle:recipe найдет страницы, заголовок которых содержит слово "recipe".</td>
+					<td class="query"><input type="text" name="intitle"/></td>
+				</tr>
+				<tr>
+					<td class="statement">allintitle</td>
+					<td class="description">То же, что и intitle, но применяется ко всем словам, указанным после оператора. Например, allintitle:chocolate cake вернет страницы, заголовки которых содержат и "chocolate", и "cake".</td>
+					<td class="query"><input type="text" name="allintitle"/></td>
+				</tr>
+				<tr>
+					<td class="statement">inurl</td>
+					<td class="description">Ищет страницы, URL которых содержит указанные слова. Например, inurl:blog найдет страницы, URL которых содержит слово "blog".</td>
+					<td class="query"><input type="text" name="inurl"/></td>
+				</tr>
+				<tr>
+					<td class="statement">allinurl</td>
+					<td class="description">Аналогично inurl, но применяется ко всем словам, указанным после оператора. Например, allinurl:profile user найдет страницы, URL которых содержит и "profile", и "user".</td>
+					<td class="query"><input type="text" name="allinurl"/></td>
+				</tr>
+				<tr>
+					<td class="statement">filetype</td>
+					<td class="description">Ищет файлы определенного типа. Например, filetype:pdf найдет PDF-документы.</td>
+					<td class="query"><input type="text" name="filetype"/></td>
+				</tr>
+				<tr>
+					<td class="statement">intext</td>
+					<td class="description">Ищет страницы, содержащие указанные слова в тексте страницы. Например, intext:tips gardening найдет страницы, содержащие слова "tips" и "gardening".</td>
+					<td class="query"><input type="text" name="intext"/></td>
+				</tr>
+				<tr>
+					<td class="statement">allintext</td>
+					<td class="description">Аналогично intext, но применяется ко всем словам, указанным после оператора. Например, allintext:healthy recipes вернет страницы, текст которых содержит и "healthy", и "recipes".</td>
+					<td class="query"><input type="text" name="allintext"/></td>
+				</tr>
+				<tr>
+					<td class="statement">site</td>
+					<td class="description">Ищет страницы только в пределах указанного сайта или домена. Например, site:example.com найдет страницы только на сайте example.com.</td>
+					<td class="query"><input type="text" name="site"/></td>
+				</tr>
+				<tr>
+					<td class="statement">link</td>
+					<td class="description">(Примечание: на момент последних обновлений этот оператор может быть не поддерживаться) Ищет страницы, которые содержат ссылки на указанный URL. Например, link:example.com найдет страницы, ссылающиеся на example.com.</td>
+					<td class="query"><input type="text" name="link"/></td>
+				</tr>
+				<tr>
+					<td class="statement">inanchor</td>
+					<td class="description">Ищет страницы, в тексте якоря (anchor text) ссылок на которые содержатся указанные слова. Это может быть полезно для поиска страниц, на которые ссылаются с определенным текстом ссылки.</td>
+					<td class="query"><input type="text" name="inanchor"/></td>
+				</tr>
+				<tr>
+					<td class="statement">numrange</td>
+					<td class="description">Ищет страницы, содержащие числа в указанном диапазоне. Например, 2000..2020 найдет страницы, содержащие числа от 2000 до 2020.</td>
+					<td class="query">От: <input type="number" name="numrange_start"/> <br> До: <input type="number" name="numrange_end"/></td>
+				</tr>
+				<tr>
+					<td class="statement">daterange</td>
+					<td class="description">Ищет страницы, опубликованные в определенном диапазоне дат. Требует использования специального формата даты Юлианского календаря.</td>
+					<td class="query">От: <input type="date" name="daterange_start"/> <br> До: <input type="date" name="daterange_end"/></td>
+				</tr>
+				<tr>
+					<td class="statement">author</td>
+					<td class="description">Ищет страницы авторства указанного лица. Чаще используется в поиске научных статей или публикаций.</td>
+					<td class="query"><input type="text" name="author"/></td>
+				</tr>
+				<tr>
+					<td class="statement">group</td>
+					<td class="description">Ищет сообщения в Google Группах от определенной группы или на определенную тему.</td>
+					<td class="query"><input type="text" name="group"/></td>
+				</tr>
+				<tr>
+					<td class="statement">insubject</td>
+					<td class="description">Ищет темы в Google Группах, содержащие указанные слова в заголовке.</td>
+					<td class="query"><input type="text" name="insubject"/></td>
+				</tr>
+				<tr>
+					<td class="statement">msgid</td>
+					<td class="description">Ищет сообщения в Google Группах по их уникальному идентификатору сообщения.</td>
+					<td class="query"><input type="text" name="msgid"/></td>
+				</tr>
+			</table>
+			<div class="container search-btn-cont mt-4 mb-4">
+				<div class="search-btn-div col">
+					<input id="generate-query-btn" type="submit" value="Сгенерировать запрос">
+				</div>
+			</div>
+		</form>
+
+		<script src="js/generate-query.js"></script>
+		<script>
+			document.addEventListener("DOMContentLoaded", function() {
+			  // Обработчик события клика к кнопке "Сгенерировать запрос"
+			  document.getElementById("generate-query-btn").addEventListener("click", function(e) {
+				// Предотвращаем стандартное поведение формы (отправку)
+				e.preventDefault();
+				
+				var queryString = '';
+		  
+				// Все строки таблицы с классом query (проход в цикле)
+				document.querySelectorAll('.query input').forEach(function(input) {
+				  var name = input.name;
+				  var value = input.value.trim();
+		  
+				  // специальный формат запроса для числовых диапазонов и дат
+				  if (value && (name.endsWith('_start') || name.endsWith('_end'))) {
+					// Пропускаем обработку здесь, так как диапазоны будут обработаны отдельно
+				  } else if (value) {
+					// Для обычных полей
+					queryString += name + ':' + value + ' ';
+				  }
+				});
+		  
+				// Обработка диапазонных полей
+				document.querySelectorAll('.query input[type="number"], .query input[type="date"]').forEach(function(input) {
+				  var baseName = input.name.replace(/_(start|end)$/, ''); // Убрать _start и _end
+				  var startValue = document.querySelector(`input[name="${baseName}_start"]`).value;
+				  var endValue = document.querySelector(`input[name="${baseName}_end"]`).value;
+		  
+				  if (startValue && endValue) {
+					queryString += `${baseName}:${startValue}..${endValue} `;
+					// Удалить значения из обработки (избежать повторения)
+					document.querySelector(`input[name="${baseName}_start"]`).value = '';
+					document.querySelector(`input[name="${baseName}_end"]`).value = '';
+				  }
+				});
+		  
+				// Установка запроса в инпут поиска Google
+				document.getElementById("search-inpt").value = queryString.trim();
+
+				//прокрутка вверх
+				window.scrollTo({
+					top: 0,
+					left: 0,
+					behavior: 'smooth'
+				});
+			  });
+			});
+		</script>
+	</div>
+
+	<div class="container-fluid footer">
+		<a href="https://www.google.com/search/howsearchworks/?fg=1">Как работает Google Поиск</a>
+		<a href="https://ru.wikipedia.org/wiki/Google_hacking">Google hacking (Google dorking) / Wikipedia</a>
+		<a href="https://www.exploit-db.com/google-hacking-database">Google Hacking Database (GHDB) / ExploitDB</a>
+		<a href="">Google <sup> Dorks </sup> / GitHub</a>
+	</div>
+
+	<!-- Bootstrap JS -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
